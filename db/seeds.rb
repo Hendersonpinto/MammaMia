@@ -1,5 +1,5 @@
 
-10.times do
+2.times do
  user = User.new(
    name: Faker::Name.first_name,
    last_name: Faker::Name.last_name,
