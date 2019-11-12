@@ -2,7 +2,7 @@ henderson = User.new(
   name: "Henderson"
   last_name: "Pinto"
   location: Faker::Address.full_address
-  email: "hendorson@mammamia.com"
+  email: "henderson@mammamia.com"
   password: "12345"
   )
 henderson.save!
@@ -27,26 +27,118 @@ marcus.save!
 
 
 
-
-10.times do
- user = User.new(
+first_user = User.new(
    name: Faker::Name.first_name,
    last_name: Faker::Name.last_name,
    location: Faker::Address.full_address,
-   email: Faker::Internet.email
+   email: Faker::Internet.email,
+   password: "12345"
  )
- user.save!
-end
+ first_user.save!
 
 
-
-20.times do
- mom = Mom.new(
+second_user = User.new(
    name: Faker::Name.first_name,
+   last_name: Faker::Name.last_name,
+   location: Faker::Address.full_address,
+   email: Faker::Internet.email,
+   password: "12345"
+ )
+ second_user.save!
+
+third_user = User.new(
+   name: Faker::Name.first_name,
+   last_name: Faker::Name.last_name,
+   location: Faker::Address.full_address,
+   email: Faker::Internet.email,
+   password: "12345"
+ )
+ third_user.save!
+
+
+mom1 = Mom.new(
+   name: Maria,
    last_name: Faker::Name.last_name,
    location: Faker::Address.full_address,
    price: Faker::Number.within(range: 50..100),
-   owner: [henderson, rasmus, marcus].sample
+   owner: [henderson]
  )
- mom.save!
-end
+ mom1.save!
+
+
+mom2 = Mom.new(
+   name: Anne,
+   last_name: Faker::Name.last_name,
+   location: Faker::Address.full_address,
+   price: Faker::Number.within(range: 50..100),
+   owner: marcus
+ )
+ mom2.save!
+
+mom3 = Mom.new(
+   name: Ingrid,
+   last_name: Faker::Name.last_name,
+   location: Faker::Address.full_address,
+   price: Faker::Number.within(range: 50..100),
+   owner: rasmus
+ )
+ mom3.save!
+
+
+mom4 = Mom.new(
+   name: Irene,
+   last_name: Faker::Name.last_name,
+   location: Faker::Address.full_address,
+   price: Faker::Number.within(range: 50..100),
+   owner: first_user
+ )
+ mom4.save!
+
+
+ mom5 = Mom.new(
+   name: Caroline,
+   last_name: Faker::Name.last_name,
+   location: Faker::Address.full_address,
+   price: Faker::Number.within(range: 50..100),
+   owner: second_user
+ )
+ mom5.save!
+
+
+ mom6 = Mom.new(
+   name: Martha,
+   last_name: Faker::Name.last_name,
+   location: Faker::Address.full_address,
+   price: Faker::Number.within(range: 50..100),
+   owner: third_user
+ )
+ mom6.save!
+
+
+
+# 20.times do
+#  mom = Mom.new(
+#    name: Faker::Name.first_name,
+#    last_name: Faker::Name.last_name,
+#    location: Faker::Address.full_address,
+#    price: Faker::Number.within(range: 50..100),
+#    owner: [henderson, rasmus, marcus].sample
+#  )
+#  mom.save!
+# end
+
+
+
+
+
+
+
+# 10.times do
+#  user = User.new(
+#    name: Faker::Name.first_name,
+#    last_name: Faker::Name.last_name,
+#    location: Faker::Address.full_address,
+#    email: Faker::Internet.email
+#  )
+#  user.save!
+# end
